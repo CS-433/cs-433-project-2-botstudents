@@ -15,11 +15,11 @@ We achieved a 89.98% accuracy on the validation set.
 
 ## Summary 
 
-1 - Classical Nachine Learning Methods  
-2 - Preprocessing for GloVe Embeddings
-3 - Glove Pretrained  
-4 - Neural Network Tunning 
-5 - Bidirectional Encoder Representations from Transformers 
+1 - Classical Nachine Learning Methods  \\
+2 - Preprocessing for GloVe Embeddings  \\
+3 - Glove Pretrained  \\
+4 - Neural Network Tunning \\
+5 - Bidirectional Encoder Representations from Transformers \\
 
 
 ### 1 - Classical Machine Learning Methods 
