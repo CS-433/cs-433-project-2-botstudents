@@ -18,8 +18,8 @@ Link - https://www.aicrowd.com/challenges/epfl-ml-text-classification
 
 We tried various approcaches on this project highligting the field improvements in the last few years. From classical ML methods to recent breakthroughs we explored different paths to achieve the same task. 
  
-The best result, is achieved with the Bidirectional Encoder Representations for Transforrmers :
-We achieved a 89.98% accuracy on the validation set.
+The best result, is achieved with the Bidirectional Encoder Representations for Transforrmers :  
+We reached a 89.98% accuracy on the validation set.
 
 ## Summary 
 
