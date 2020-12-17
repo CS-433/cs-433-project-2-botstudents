@@ -79,8 +79,7 @@ https://nlp.stanford.edu/projects/glove/
 ## Project Structure 
 
 ├── run_bert.py                            
-├── README.md        
-├── report      
+├── README.md             
 ├── output.csv                          
 |      
 ├── twitter-datasets               - This folder needs to be downloaded       
