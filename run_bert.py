@@ -1,34 +1,36 @@
 # -*- coding: utf-8 -*-
-"""run.py
 
-The following script uses the Keras wrapper library ktrain to build a BERT classifier
-on the twitter dataset which can be downloaded here : 
-https://www.aicrowd.com/challenges/epfl-ml-text-classification
+#run.py
 
-ktrain : 
-@article{maiya2020ktrain,
-         title={ktrain: A Low-Code Library for Augmented Machine Learning},
-         author={Arun S. Maiya},
-         journal={arXiv},
-         year={2020},
-         volume={arXiv:2004.10703 [cs.LG]}
-}
+#The following script uses the Keras wrapper library ktrain to build a BERT classifier
+#on the twitter dataset which can be downloaded here : 
+#https://www.aicrowd.com/challenges/epfl-ml-text-classification
 
-BERT : https://arxiv.org/abs/1810.04805
+#ktrain : 
+#@article{maiya2020ktrain,
+#         title={ktrain: A Low-Code Library for Augmented Machine Learning},
+#         author={Arun S. Maiya},
+#         journal={arXiv},
+#         year={2020},
+#         volume={arXiv:2004.10703 [cs.LG]}
+#}
 
-Keras : 
-@misc{chollet2015keras,
-  title={Keras},
-  author={Chollet, Fran\c{c}ois and others},
-  year={2015},
-  howpublished={\url{https://keras.io}},
-}"""
+#BERT : https://arxiv.org/abs/1810.04805
+
+#Keras : 
+#@misc{chollet2015keras,
+#  title={Keras},
+#  author={Chollet, Fran\c{c}ois and others},
+#  year={2015},
+#  howpublished={\url{https://keras.io}},
+#}
 
 
 #to import ktrain use pip install ktrain
 import ktrain
 import pandas as pd
 from ktrain import text
+import csv
 
 
 # Returns a dataframe with data in twitter-datasets
