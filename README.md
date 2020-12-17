@@ -6,6 +6,14 @@
 
 This project aims to use Natural Language Processing to perform sentiment analysis on a twitter dataset. The task is to predict the presence of a positive :) or negative :( smiley within a tweet. The datset is composed of 2.500.000 tweets from which the smileys have been removed. 
 
+## Twitter Dataset 
+
+Link - https://www.aicrowd.com/challenges/epfl-ml-text-classification  
+
+- *train_pos.txt* and *train_neg.txt* : a small set of training tweets for each of the two classes.     
+- *train_pos_full.txt* and *train_neg_full.txt* : a complete set of training tweets for each of the two classes, about 1M tweets per class.      
+- *sampleSubmission.csv* : a sample submission file in the correct format - each test tweet is numbered. (submission of predictions: -1 = negative prediction, 1 = positive prediction)    
+
 ## Overview 
 
 We tried various approcaches on this project highligting the field improvements in the last few years. From classical ML methods to recent breakthroughs we explored different paths to achieve the same task. 
@@ -30,13 +38,9 @@ In this part, we used various classical Natural Language Processing methods.
 
 The project suggested to train our own GloVe embeddings directly from the tweets. We implemented three preprocessing tasks to see if we were able to get better word-vector representations and to quantify the use of preprocessing. We tested our preprocessing options using LSTM Neural Network. 
 
-
-
 ### 3 - GloVe Pretrained 
 
 In this part, we used pretrained GloVe embeddings to classify the tweets using LSTM Neural Networks. 
-
-##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation
 
 ### 4 - Neural Network Tuning 
 
@@ -46,14 +50,6 @@ We used both LSTM and CNN architectures and compared the results.
 ### 5 - Bidirectional Encoder Representations from Transformers 
 
 In this part we train a BERT classifier using the ktrain library. 
-
-## Citations 
-
-##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation
-##### 
-#####
-#####
-#####
 
 
 ## Downloads 
@@ -65,25 +61,38 @@ The following files need to be downloaded and added to the project architecture 
 
 ## Project Structure 
 
-├── run.py                        
-├── README.md   
-├── report  
-├── output.csv                     
-|
-├── twitter-datasets               - This folder needs to be downloaded 
-│   ├── train- 
-│   ├── train- 
-│
-├── classical-ml
-│   ├── negative-words.txt         : Dataset of negative words in English.
-│   ├── positive-words.txt         : Dataset of positive words in English.
-│   ├── README.md                  : Brief explanation of the opinion-lexicon datasets.
+├── run.py                            
+├── README.md        
+├── report      
+├── output.csv                          
+|    
+├── twitter-datasets               - This folder needs to be downloaded     
+│   ├── train-   
+│   ├── train-   
+│    
+├── classical-ml  
+│   ├── classical_nlp_tests.ipynb 
+│   ├── classical_ml_utils.py  
+│   ├── load_utils.py
 |
 ├── preprocessing-for-GloVe        
-│   ├── 
+│   ├── vocab 
+│   │   ├── vocab_pp0.pkl
+│   │   ├── vocab_pp1.pkl
+│   │   ├── vocab_pp2.pkl
+│   │   ├── vocab_pp3.pkl
 │   │
+│   ├── pptweets 
+│   │   ├── tweets_pp0.pkl
+│   │   ├── tweets_pp1.pkl
+│   │   ├── tweets_pp2.pkl
+│   │   ├── tweets_pp3.pkl
 │   │
-|   │
+│   ├── embeddings 
+│   │   ├── embeddings_pp0.pkl
+│   │   ├── embeddings_pp1.pkl
+│   │   ├── embeddings_pp2.pkl
+│   │   ├── embeddings_pp3.pkl
 │
 ├── glove-pre-trained
 │   ├── glove_pre_trained.ipynb
@@ -104,4 +113,12 @@ The following files need to be downloaded and added to the project architecture 
 │   ├── load_utils.py
 │   ├── proj1_helpers.py
 
+## Citations 
 
+##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation
+##### 
+
+
+#####
+#####
+#####
