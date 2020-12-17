@@ -116,7 +116,7 @@ The following files need to be downloaded and added to the project architecture 
 ## Citations 
 
 ##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation
-##### @misc{tensorflow2015-whitepaper,
+@misc{tensorflow2015-whitepaper,
 title={ {TensorFlow}: Large-Scale Machine Learning on Heterogeneous Systems},
 url={https://www.tensorflow.org/},
 note={Software available from tensorflow.org},
