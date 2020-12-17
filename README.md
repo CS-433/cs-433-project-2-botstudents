@@ -21,152 +21,154 @@ We tried various approcaches on this project highligting the field improvements 
 The best result, is achieved with the Bidirectional Encoder Representations for Transforrmers :  
 We reached a 89.98% accuracy on the validation set.
 
+## Hoy to create submission 
+
+- Download twitter-datasets 
+- Download BERT weights 
+- pip install tensorflow 
+- pip install ktrain 
+- run_bert.py 
+
+
 ## Summary 
 
-1 - Classical Nachine Learning Methods    
-2 - Preprocessing for GloVe Embeddings   
-3 - Glove Pretrained    
-4 - Neural Network Tunning   
-5 - Bidirectional Encoder Representations from Transformers   
+**1 - Classical Nachine Learning Methods**       
+**2 - Preprocessing for GloVe Embeddings**     
+**3 - Glove Pretrained**       
+**4 - Neural Network Tuning**     
+**5 - Bidirectional Encoder Representations from Transformers**     
 
-
-### 1 - Classical Machine Learning Methods 
+#### 1 - Classical Machine Learning Methods   
 
 In this part, we used various classical Natural Language Processing methods. 
 
-### 2 - Preprocessing for GloVe Embedding 
+#### 2 - Preprocessing for GloVe Embedding 
 
 The project suggested to train our own GloVe embeddings directly from the tweets. We implemented three preprocessing tasks to see if we were able to get better word-vector representations and to quantify the use of preprocessing. We tested our preprocessing options using LSTM Neural Network. 
 
-### 3 - GloVe Pretrained 
+**GloVeEmbedding.ipynb** is the notebook used to process the tweets and produce the embeddings as weel as the corresponding vocabularies. No need to run it as we already placed the preproceed tweets, embeddings and vocabularies in the folder for convenience. Every step of preprocessing is explained in the notebook. 
+
+**GloVeTraining.ipynb** is the notebook used to compare preprocessing options. The results from preprocessing testing were not satisfying which encouraged us to quickly move to other options such as pretrained embeddings or using the keras embedding layers.    
+
+#### 3 - GloVe Pretrained 
 
 In this part, we used pretrained GloVe embeddings to classify the tweets using LSTM Neural Networks. 
 
-### 4 - Neural Network Tuning 
+#### 4 - Neural Network Tuning 
 
 In this part we used the keras embedding layer to build our own word vectors with supervised learning. 
 We used both LSTM and CNN architectures and compared the results. 
 
-### 5 - Bidirectional Encoder Representations from Transformers 
+#### 5 - Bidirectional Encoder Representations from Transformers 
 
-In this part we train a BERT classifier using the ktrain library. 
+In this part we train a BERT classifier using the ktrain library.  
 
+To run the BERT model please download the bert-predictor2 folder (containing the model weights) on the following link and place it in the root of the project.   
 
 ## Downloads 
 
 The following files need to be downloaded and added to the project architecture : 
 - twitter-datasets 
-- 
+- bert_predictors2
+https://drive.google.com/drive/folders/1cQ1fte2ILDfBD4zeXmAuM8f3rL12pCKx?fbclid=IwAR0HLpsom2lGMZX7SwebI0peFoqHdg3_s_lANzcCL_bOESZeBHueUQf6FZg
+- glove.twitter.27B.25d.txt
+https://nlp.stanford.edu/projects/glove/
+
 
 
 ## Project Structure 
 
-├── run.py                            
+├── run_bert.py                            
 ├── README.md        
 ├── report      
 ├── output.csv                          
-|    
-├── twitter-datasets               - This folder needs to be downloaded     
-│   ├── train-   
-│   ├── train-   
+|      
+├── twitter-datasets               - This folder needs to be downloaded       
+│   ├── train_pos.txt     
+│   ├── train_neg.txt    
+│   ├── train_pos_full.txt   
+│   ├── train_neg_full.txt  
+│   ├── sampleSubmission.csv      
+│  
+├── classical-ml      
+│   ├── classical_nlp_tests.ipynb   
+│   ├── classical_ml_utils.py    
+│   ├── load_utils.py  
+|  
+├── preprocessing-for-GloVe   
+│   ├── GloVeEmbedding.ipynb    - Notebook used for preprocessing / No need to rub it 
+│   ├── GloVeTraining.ipynb   
+│   ├── preprocessing.py 
+│   ├── FeatureBuilder.py   
+│   ├── load_utils_pp.py   
+│   │ 
+│   ├── PreprocessingFiles   - Files needed for preprocessing 
+│   │
+│   ├── vocab        - Vocab folder for preprocessing options    
+│   │   
+│   ├── vocab        - Vocab folder for preprocessing options    
+│   ├── pptweets     - Preprocessed tweets folder for each preprocessing options    
+│   ├── embeddings   - Embedding folder for preprocessing options        
+│   ├── models       - Models folder for preprocessing options    
+│   │  
+│   ├──  build_vocab.sh  
+│   ├──  cut_vocab.sh  
+│   ├──  build_vocab_pp.sh  
+│   ├──  cut_vocab_pp.sh    
 │    
-├── classical-ml  
-│   ├── classical_nlp_tests.ipynb 
-│   ├── classical_ml_utils.py  
-│   ├── load_utils.py
-|
-├── preprocessing-for-GloVe        
-│   ├── vocab 
-│   │   ├── vocab_pp0.pkl
-│   │   ├── vocab_pp1.pkl
-│   │   ├── vocab_pp2.pkl
-│   │   ├── vocab_pp3.pkl
-│   │
-│   ├── pptweets 
-│   │   ├── tweets_pp0.pkl
-│   │   ├── tweets_pp1.pkl
-│   │   ├── tweets_pp2.pkl
-│   │   ├── tweets_pp3.pkl
-│   │
-│   ├── embeddings 
-│   │   ├── embeddings_pp0.pkl
-│   │   ├── embeddings_pp1.pkl
-│   │   ├── embeddings_pp2.pkl
-│   │   ├── embeddings_pp3.pkl
-│
-├── glove-pre-trained
-│   ├── glove_pre_trained.ipynb
-│   ├── load_utils.py
-│   ├── stanford_preprocessing.py 
-│   ├── glove.twitter.27B.25d.txt     - Pre-trained word vectors of twitter dataset by Stanford NLP group.
-|
-├── neura-networks-tuning
-│   ├── neural_networks.ipynb
-│   ├── FeaturesBuilder.py
-│   ├── neural_net_utils.py
-│   ├── load.py
-│   ├── glove_embeddings.npy
-│   ├── vocab.pkl
-|
-├── bert-ktrain
-│   ├── bert_ktrain.ipynb
-│   ├── load_utils.py
-│   ├── proj1_helpers.py
-
-## Citations 
-
-##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation
-@misc{tensorflow2015-whitepaper,
-title={ {TensorFlow}: Large-Scale Machine Learning on Heterogeneous Systems},
-url={https://www.tensorflow.org/},
-note={Software available from tensorflow.org},
-author={
-    Mart\'{\i}n~Abadi and
-    Ashish~Agarwal and
-    Paul~Barham and
-    Eugene~Brevdo and
-    Zhifeng~Chen and
-    Craig~Citro and
-    Greg~S.~Corrado and
-    Andy~Davis and
-    Jeffrey~Dean and
-    Matthieu~Devin and
-    Sanjay~Ghemawat and
-    Ian~Goodfellow and
-    Andrew~Harp and
-    Geoffrey~Irving and
-    Michael~Isard and
-    Yangqing Jia and
-    Rafal~Jozefowicz and
-    Lukasz~Kaiser and
-    Manjunath~Kudlur and
-    Josh~Levenberg and
-    Dandelion~Man\'{e} and
-    Rajat~Monga and
-    Sherry~Moore and
-    Derek~Murray and
-    Chris~Olah and
-    Mike~Schuster and
-    Jonathon~Shlens and
-    Benoit~Steiner and
-    Ilya~Sutskever and
-    Kunal~Talwar and
-    Paul~Tucker and
-    Vincent~Vanhoucke and
-    Vijay~Vasudevan and
-    Fernanda~Vi\'{e}gas and
-    Oriol~Vinyals and
-    Pete~Warden and
-    Martin~Wattenberg and
-    Martin~Wicke and
-    Yuan~Yu and
-    Xiaoqiang~Zheng},
-  year={2015},
-}
+├── glove-pre-trained  
+│   ├── glove_pre_trained.ipynb  
+│   ├── load_utils.py  
+│   ├── stanford_preprocessing.py    
+│   ├── glove.twitter.27B.25d.txt     - Pre-trained word vectors of twitter dataset by Stanford NLP group.  
+|  
+├── neura-networks-tuning  
+│   ├── neural_networks.ipynb  
+│   ├── FeaturesBuilder.py  
+│   ├── neural_net_utils.py  
+│   ├── load.py  
+│   ├── glove_embeddings.npy   
+│   ├── vocab.pkl  
+|  
+├── bert-ktrain  
+│   ├── bert_ktrain.ipynb  
+│   ├── load_utils.py  
+│   ├── proj1_helpers.py  
 
 
-#####
-#####
-#####
+## Hoy to create submission 
 
+- Download twitter-datasets 
+- Download BERT weights 
+- pip install tensorflow 
+- pip install ktrain 
+- run_bert.py 
+
+  
+## Citations   
+  
+##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation  
+
+##### TensorFlow
+Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo,
+Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis,
+Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow,
+Andrew Harp, Geoffrey Irving, Michael Isard, Rafal Jozefowicz, Yangqing Jia,
+Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Mané, Mike Schuster,
+Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Jonathon Shlens,
+Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker,
+Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viégas,
+Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke,
+Yuan Yu, and Xiaoqiang Zheng.
+TensorFlow: Large-scale machine learning on heterogeneous systems,
+2015. Software available from tensorflow.org.
+
+#####  Ktrain   
+ktrain: A Low-Code Library for Augmented Machine Learning  
+author: Arun S. Maiya  
+https://github.com/amaiya/ktrain?fbclid=IwAR1C_hYsDbOPQdvYGu9K0twrPhrxMb_dnp2FRjyDFX-SBDulvZc4MZH7x-k  
+
+#####  scikit learn   
+Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.  
+ 
 
