@@ -15,20 +15,22 @@ We achieved a 89.98% accuracy on the validation set.
 
 ## Summary 
 
-1 - Classical Nachine Learning Methods  \\
-2 - Preprocessing for GloVe Embeddings  \\
-3 - Glove Pretrained  \\
-4 - Neural Network Tunning \\
-5 - Bidirectional Encoder Representations from Transformers \\
+1 - Classical Nachine Learning Methods    
+2 - Preprocessing for GloVe Embeddings   
+3 - Glove Pretrained    
+4 - Neural Network Tunning   
+5 - Bidirectional Encoder Representations from Transformers   
 
 
 ### 1 - Classical Machine Learning Methods 
 
-In this part, we used various classical Natural Language Processing mMthods. 
+In this part, we used various classical Natural Language Processing methods. 
 
 ### 2 - Preprocessing for GloVe Embedding 
 
 The project suggested to train our own GloVe embeddings directly from the tweets. We implemented three preprocessing tasks to see if we were able to get better word-vector representations and to quantify the use of preprocessing. We tested our preprocessing options using LSTM Neural Network. 
+
+
 
 ### 3 - GloVe Pretrained 
 
@@ -38,9 +40,8 @@ In this part, we used pretrained GloVe embeddings to classify the tweets using L
 
 ### 4 - Neural Network Tuning 
 
-In this part we used the keras embedding layer to build our own word vectors with supervised learning. We used both LSTM and CNN architectures and compared the results. 
-
-
+In this part we used the keras embedding layer to build our own word vectors with supervised learning. 
+We used both LSTM and CNN architectures and compared the results. 
 
 ### 5 - Bidirectional Encoder Representations from Transformers 
 
@@ -49,7 +50,7 @@ In this part we train a BERT classifier using the ktrain library.
 ## Citations 
 
 ##### Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global Vectors for Word Representation
-#####
+##### 
 #####
 #####
 #####
